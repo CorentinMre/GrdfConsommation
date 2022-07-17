@@ -36,7 +36,16 @@ print(data)
 
 Result example:
 ```json
-[{"day": "2022-07-06", "consommation": 9}, {"day": "2022-07-07", "consommation": 10}, {"day": "2022-07-08", "consommation": 12}, {"day": "2022-07-09", "consommation": 10}, {"day": "2022-07-10", "consommation": 11}, {"day": "2022-07-11", "consommation": 10}, {"day": "2022-07-12", "consommation": 11}, {"day": "2022-07-13", "consommation": 11}]
+[
+    {"day": "2022-07-06", "consommation": 9},
+    {"day": "2022-07-07", "consommation": 10}, 
+    {"day": "2022-07-08", "consommation": 12},
+    {"day": "2022-07-09", "consommation": 10},
+    {"day": "2022-07-10", "consommation": 11},
+    {"day": "2022-07-11","consommation": 10},
+    {"day": "2022-07-12", "consommation": 11},
+    {"day": "2022-07-13", "consommation": 11}
+]
 ```
 
 And if you want to compare with last year:
