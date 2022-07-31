@@ -43,7 +43,7 @@ class GRDFConsommation:
         if loginData["state"] != "SUCCESS":
             raise "Login failed"
 
-        if self.pce == None:
+        if not self.pce:
             self.session.get("https://monespace.grdf.fr/api/e-conso/pce")
             self.pce = self.session.get("https://monespace.grdf.fr/api/e-conso/pce").json()[0]["pce"]
 
