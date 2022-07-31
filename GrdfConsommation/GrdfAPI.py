@@ -3,11 +3,11 @@ import requests
 import datetime
 
 class GRDFConsommation:
-    def __init__(self, email, password, pce_id, nbDays):
+    def __init__(self, email, password, nbDays, pce_id = None):
         self.email = email
         self.password = password
-        self.pce = pce_id
         self.nbDays = nbDays
+        self.pce = pce_id
 
         self.session = requests.Session()
 
@@ -42,6 +42,11 @@ class GRDFConsommation:
         loginData = response.json()
         if loginData["state"] != "SUCCESS":
             raise "Login failed"
+
+        if self.pce == None:
+            self.session.get("https://monespace.grdf.fr/api/e-conso/pce")
+            self.pce = self.session.get("https://monespace.grdf.fr/api/e-conso/pce").json()[0]["pce"]
+
 
         self.session.get(self.dataUrl.format(self.startDate, self.endDate, self.pce))
 
