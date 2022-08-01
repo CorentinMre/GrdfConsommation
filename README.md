@@ -58,8 +58,8 @@ import datetime
 profil = GrdfConsommation.GRDFConsommation(
                                             email="<your email>", 
                                             password="<your password>", 
-                                            pce_id="<your pce id>", 
-                                            nbDays=10 # Nombre de jours à récupérer depuis ce jour
+                                            nbDays=10, # Number of days to recover from this day
+                                            pce_id="<your pce id>" # For more speed you can enter your pce identifier (but it is not mandatory)
                                         )
 
 #données des n derniers jours
