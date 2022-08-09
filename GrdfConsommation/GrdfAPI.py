@@ -27,7 +27,7 @@ class GRDFConsommation:
     def data(self) -> list:
         self._update()
         data = []
-        for day in self.__data:
+        for day in self._data:
             data.append({"day": day["journeeGaziere"], "consommation": day["energieConsomme"]})
         return data
 
@@ -54,4 +54,4 @@ class GRDFConsommation:
 
         response.raise_for_status()
 
-        self.__data = response.json()[self.pce]["releves"]
+        self._data = response.json()[self.pce]["releves"]
