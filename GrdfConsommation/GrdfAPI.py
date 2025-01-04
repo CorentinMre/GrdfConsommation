@@ -127,7 +127,7 @@ class GRDFClient:
             }
         )
         if challenge_response.status_code != 200:
-            raise Exception(f"Erreur lors du challenge: {challenge_response.status_code}")
+            raise Exception(f"Erreur lors du challenge: {challenge_response.status_code} | Vérifiez vos identifiants !!")
 
         # get the redirect URL
         challenge_data = challenge_response.json()
