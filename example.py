@@ -1,17 +1,22 @@
 
 
 import GrdfConsommation
+from datetime import datetime, timedelta
 
 
-profil = GrdfConsommation.GRDFConsommation(
-                                            email="<your email>", 
-                                            password="<your password>",
-                                            nbDays=10, # Number of days to recover from this day
-                                            pce_id="<your pce id>" # For more speed you can enter your pce identifier (but it is not mandatory)
+client = GrdfConsommation.GRDFClient(
+                                            username="<username>", 
+                                            password="<password>", 
                                         )
 
 
-data = profil.data()
+data = client.get_consumption_data(
+            # date_debut="2022-01-04",
+            # date_fin="2025-01-04",
+            date_debut=(datetime.now() - timedelta(days=8)).strftime("%Y-%m-%d"),
+            date_fin=datetime.now().strftime("%Y-%m-%d")
+        )
+
 
 print(data)
 

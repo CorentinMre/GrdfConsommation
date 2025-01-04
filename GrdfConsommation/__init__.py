@@ -1,5 +1,5 @@
 
-__author__ = "Corentin Mre"
+__author__ = "CorentinMre"
 __name__ = "GrdfConsommation"
 
-from .GrdfAPI import GRDFConsommation
+from .GrdfAPI import GRDFClient
